@@ -1,0 +1,19 @@
+{
+  "replaceAttrValues": {
+    "black": "currentColor",
+    "http://www.w3.org/2000/svg": ""
+  },
+  "jsxRuntimeImport": {
+    "source": "react",
+    "specifiers": [
+      "FC",
+      "memo"
+    ]
+  },
+  "svgProps": {
+    "xmlns": "",
+    "fill": "none",
+    "width": "{size}",
+    "height": "{size}"
+  }
+}

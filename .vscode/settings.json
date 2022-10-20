@@ -1,0 +1,155 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  /*--- Turbo Console Log - Configuration ---*/
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "turboConsoleLog.delimiterInsideMessage": "---",
+  "turboConsoleLog.logMessagePrefix": "🔥",
+  "turboConsoleLog.addSemicolonInTheEnd": false,
+  "turboConsoleLog.insertEmptyLineAfterLogMessage": false,
+  "turboConsoleLog.insertEmptyLineBeforeLogMessage": false,
+  "turboConsoleLog.quote": "\"",
+  "turboConsoleLog.wrapLogMessage": false,
+  /*--- Better Comments - Configuration ---*/
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "fixme",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "bug",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "title",
+      "color": "#61DBFB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  /*--- TODO Tree - Configuration ---*/
+  "todo-tree.general.revealBehaviour": "start of line",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "TITLE",
+    "MARK",
+    "TASKS",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "background": "#FFCCCC",
+      "gutterIcon": true
+    },
+    "HACK": {
+      "background": "#D6EAF9",
+      "gutterIcon": true
+    },
+    "FIXME": {
+      "background": "#FFCCCC",
+      "gutterIcon": true
+    },
+    "TODO": {
+      "background": "#FFE8CC",
+      "gutterIcon": true
+    },
+    "XXX": {
+      "background": "#FAFAFA",
+      "gutterIcon": true
+    },
+    "TITLE": {
+      "background": "#DFF8FE",
+      "gutterIcon": true
+    },
+    "MARK": {
+      "background": "#DFF8FE",
+      "gutterIcon": true
+    },
+    "TASKS": {
+      "background": "#EAF3E4",
+      "gutterIcon": true
+    },
+    "[ ]": {
+      "background": "#EAF3E4",
+      "gutterIcon": true
+    },
+    "[x]": {
+      "background": "#EAF3E4",
+      "gutterIcon": true
+    }
+  },
+  /*--- Prettier - Configuration ---*/
+  "prettier.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true
+  /*--- ESLint - Configuration ---*/
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true
+  // }
+}

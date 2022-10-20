@@ -1,0 +1,144 @@
+{
+  /*
+    Shorthand syntaxes
+    ------------------
+    'tnf'
+    'onPress'
+    'bg'
+    'stys'
+    'rnst'
+    'flat'
+    'af'
+    'exc'
+    'tl'
+    'todo'
+    'fix'
+  */
+
+  //RN - Typescript Functional Component Boiler
+  "Functional Component": {
+    "prefix": "tnf",
+    "body": [
+      "import React, {useState, useEffect, FC, memo} from 'react';",
+      "import {View, Text, StyleSheet} from 'react-native';",
+      "import equals from 'react-fast-compare';",
+      "",
+      "type TProps = {}",
+      "",
+      "const ${TM_FILENAME_BASE}:FC<TProps> = (props) =>",
+      "{",
+      "",
+      "",
+      "",
+      "	return (",
+      "		<View style={styles.container}>",
+      "			<Text style={styles.text}>${TM_FILENAME_BASE}</Text>",
+      "		</View>",
+      "		);",
+      "};",
+      "",
+      "const styles = StyleSheet.create({",
+      "	container:",
+      "	{",
+      "		flex: 1,",
+      "		backgroundColor: '#fff',",
+      "		alignItems: 'center',",
+      "		justifyContent: 'center',",
+      "	},",
+      "	text: ",
+      "	{",
+      "		fontSize: 16,",
+      "	},",
+      "});",
+      "",
+      "export default memo(${TM_FILENAME_BASE}, equals);"
+    ],
+    "description": "React-Native Typescript Functional Component Template"
+  },
+
+  //onPress boilerplate
+  "On Press Empty Function": {
+    "prefix": "onPress",
+    "body": ["onPress={() => {}}"],
+    "description": "onPress empty function"
+  },
+
+  //quick bg
+  "Background white": {
+    "prefix": "bg",
+    "body": ["backgroundColor: 'white$1'"],
+    "description": "Background white"
+  },
+
+  //Style boilerplate
+  "Style": {
+    "prefix": "stys",
+    "body": ["style={styles.${1:name}}"],
+    "description": "style object"
+  },
+
+  //Stylesheet boilerplate
+  "React Native StyleSheet": {
+    "prefix": "rnst",
+    "body": [
+      "import {StyleSheet} from 'react-native';",
+      "",
+      "const styles = StyleSheet.create({",
+      " container: {",
+      " },",
+      "});",
+      "",
+      "export default styles;"
+    ]
+  },
+
+  //FlatList Boilerplate
+  "FlatList Template": {
+    "prefix": "flat",
+    "body": [
+      "<FlatList data={$1} keyExtractor={key => key.$id} renderItem={({item}) => ",
+      "{ return (<></>) }} />"
+    ],
+    "description": "Creates a FlatList template"
+  },
+
+  //Arrow Function boilerplate
+  "Arrow Function": {
+    "prefix": "af",
+    "body": ["const ${1:name} = (${2:params})  =>", "{", "", "}"],
+    "description": "Arrow function"
+  },
+
+  //Export const boilerplate
+  "Export Const": {
+    "prefix": "exc",
+    "body": ["export const $1 = $2"],
+    "description": "Export const boilerplate"
+  },
+
+  //Title Template
+  "Title Marker": {
+    "prefix": "tl",
+    "body": [
+      "/*------------------------------------------------------------",
+      "	TITLE: $0",
+      "------------------------------------------------------------*/",
+      ""
+    ],
+    "description": "Title Marker"
+  },
+
+  //Todo Template
+  "TODO Template": {
+    "prefix": "todo",
+    "body": ["//TODO: $1"],
+    "description": "Creates a todo template"
+  },
+
+  //FixMe Template
+  "FIXME Template": {
+    "prefix": "fix",
+    "body": ["//FIXME: $1"],
+    "description": "Creates a FixMe template"
+  }
+}
