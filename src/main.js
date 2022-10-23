@@ -1,7 +1,6 @@
-const { options, createDefaultConfigs, createFolder } = require("./options");
+const { createDefaultConfigs, createFolder } = require("./options");
 
 const AppyMangoCli = (args = []) => {
-  const declareOptions = options;
   const isArgsAvailable = !!args.slice(2).length;
 
   // console.log(yargs.argv);
@@ -13,9 +12,11 @@ const AppyMangoCli = (args = []) => {
     //TODO: Default wizard
   }
 
+  //* Create Default Folder Component
   if (folder) {
     return createFolder(argv);
   }
+  //* Create Default Configs
   if (config) {
     return createDefaultConfigs(argv);
   }

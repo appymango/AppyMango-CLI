@@ -3,17 +3,10 @@ const chalk = require("chalk");
 const boxen = require("boxen");
 const path = require("path");
 const fs = require("fs-extra");
-const figlet = require("figlet");
 const { COLOR } = require("../constants");
 
 const createFolder = (argv) => {
   if (argv.folder !== null || argv.f !== null) {
-    console.log(
-      chalk.hex(COLOR)(
-        figlet.textSync("Appy Mango", { horizontalLayout: "full" })
-      )
-    );
-
     //TODO: create new folder with 4 files
     // let src = path.resolve(__dirname, "../rn-typescript");
     let dest = process.cwd();

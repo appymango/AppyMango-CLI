@@ -4,16 +4,9 @@ const boxen = require("boxen");
 const path = require("path");
 const fs = require("fs-extra");
 const { COLOR } = require("../constants");
-const figlet = require("figlet");
 
 const createDefaultConfigs = (argv) => {
   if (argv.config !== null || argv.c !== null) {
-    console.log(
-      chalk.hex(COLOR)(
-        figlet.textSync("Appy Mango", { horizontalLayout: "full" })
-      )
-    );
-
     let src = path.resolve(__dirname, "../rn-typescript");
     let dest = process.cwd();
 
