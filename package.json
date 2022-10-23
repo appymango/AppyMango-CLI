@@ -1,12 +1,10 @@
 {
   "name": "appymango-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "CLI to create default configurations for the Projects",
   "main": "bin/index.js",
   "type": "commonjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "bin": {
     "mango": "./bin/index.js"
   },
@@ -14,15 +12,21 @@
     "type": "git",
     "url": "git+https://github.com/appymango/AppyMango-CLI.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Appy Mango CLI",
+    "Appy Mango",
+    "cli",
+    "scaffold",
+    "bootstrap"
+  ],
+  "author": "Santhosh Umapathi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/appymango/AppyMango-CLI/issues"
   },
   "homepage": "https://github.com/appymango/AppyMango-CLI#readme",
   "dependencies": {
-    "boxen": "5.1.2 ",
+    "boxen": "5.1.2",
     "chalk": "^4.1.2",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
