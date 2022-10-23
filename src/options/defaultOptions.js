@@ -19,4 +19,21 @@ const defaultOptions = {
   },
 };
 
-module.exports = { defaultOptions };
+const framework = {
+  default: "rn",
+  choices: [
+    { name: "React-Native", value: "rn" },
+    { name: "React", value: "r" },
+    { name: "Next Js", value: "nj" },
+  ],
+};
+
+const template = {
+  default: "t",
+  choices: [
+    { name: "JavaScript", value: "j" },
+    { name: "TypeScript", value: "t" },
+  ],
+};
+
+module.exports = { defaultOptions, framework, template };

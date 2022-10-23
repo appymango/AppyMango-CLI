@@ -2,6 +2,7 @@ const yargs = require("yargs");
 const { usage } = require("./usage");
 const { createDefaultConfigs } = require("./createDefaultConfigs");
 const { createFolder } = require("./createFolder");
+const { wizard } = require("./wizard");
 const { defaultOptions } = require("./defaultOptions");
 
 const options = yargs
@@ -14,4 +15,5 @@ module.exports = {
   options,
   createFolder,
   createDefaultConfigs,
+  wizard,
 };
