@@ -53,10 +53,6 @@ if (argv.folder !== null && argv.f !== null) {
     console.error(err);
   }
 
-  // fs.copySync(path.resolve(__dirname, "../rn-typescript"), process.cwd(), {
-  //   overwrite: true,
-  // });
-
   yargs.showHelp();
   return;
 }
