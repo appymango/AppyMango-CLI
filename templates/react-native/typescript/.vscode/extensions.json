@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "diemasmichiels.emulate",
+    "aaron-bond.better-comments",
+    "kisstkondoros.vscode-codemetrics",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "wix.vscode-import-cost",
+    "mintlify.document",
+    "gruntfuggly.todo-tree",
+    "chakrounanas.turbo-console-log",
+    "mike-co.import-sorter"
+  ]
+}
