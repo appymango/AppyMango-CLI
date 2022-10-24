@@ -33,8 +33,9 @@ const createFolder = async (argv) => {
     let loading;
 
     try {
-      fs.copySync(src, dest, { overwrite: true });
-      console.log(chalk.green("\n✅ Generated Config files successfully!"));
+      console.log(
+        chalk.green("\n✅ Generated Component files successfully!\n")
+      );
 
       loading = setInterval(() => {
         const frame = frames[(index = ++index % frames.length)];
@@ -42,6 +43,7 @@ const createFolder = async (argv) => {
           chalk.blue(`\n\n${frame} ⚡Creating Component Folder⚡ ${frame}\n\n`)
         );
       }, 80);
+      fs.copySync(src, dest, { overwrite: true });
 
       console.log(chalk.green("✅ Component folder created successfully!\n"));
     } catch (err) {
