@@ -1,28 +1,57 @@
-const yargs = require("yargs");
 const chalk = require("chalk");
-const boxen = require("boxen");
 const path = require("path");
 const fs = require("fs-extra");
-const { COLOR } = require("../constants");
+const logUpdate = require("log-update");
+const { componentWizard } = require("../wizards");
 
-const createFolder = (argv) => {
-  if (argv.folder !== null || argv.f !== null) {
-    //TODO: create new folder with 4 files
-    // let src = path.resolve(__dirname, "../rn-typescript");
-    let dest = process.cwd();
+const frames = ["-", "\\", "|", "/"];
+let index = 0;
 
-    try {
-      // fs.copySync(src, dest, { overwrite: true });
-      chalk.green("Generated Config files successfully!");
-    } catch (err) {
-      console.error("ERROR: Generating config files", err);
-    }
-
+const createFolder = async (argv) => {
+  if (argv.c) {
     return;
   }
+  const { folderName, template, framework } = await componentWizard(argv);
 
-  if (argv.folder === null && argv.f === null) {
-    yargs.showHelp();
+  const templateFolder = template === "t" ? "typescript" : "javascript";
+  const frameworkFolder =
+    framework === "rn"
+      ? "react-native"
+      : framework === "r"
+      ? "react"
+      : "nextjs";
+
+  const isAllArgsAvailable = !!(folderName && template && framework);
+
+  if (isAllArgsAvailable) {
+    let src = path.resolve(
+      __dirname,
+      `../../folder/${frameworkFolder}/${templateFolder}/component`
+    );
+    let dest = `${process.cwd()}/${folderName}`;
+
+    let loading;
+
+    try {
+      fs.copySync(src, dest, { overwrite: true });
+      console.log(chalk.green("\n✅ Generated Config files successfully!"));
+
+      loading = setInterval(() => {
+        const frame = frames[(index = ++index % frames.length)];
+        logUpdate(
+          chalk.blue(`\n\n${frame} ⚡Creating Component Folder⚡ ${frame}\n\n`)
+        );
+      }, 80);
+
+      console.log(chalk.green("✅ Component folder created successfully!\n"));
+    } catch (err) {
+      console.log(
+        chalk.red("❌ ERROR: Creating component folder\n", err, "\n")
+      );
+    }
+    //Clear loading
+    loading && clearInterval(loading);
+
     return;
   }
 };

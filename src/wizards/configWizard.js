@@ -16,10 +16,11 @@ const configWizard = async (argv) => {
 
   console.log(
     boxen(
-      chalk.blue(`\nconfigWizard to Setup default configs in your project\n`),
+      chalk.blue(`\nWizard to Setup default configs in your project\n`),
       style
     )
   );
+
   const questions = [];
 
   if (!framework) {
@@ -46,7 +47,7 @@ const configWizard = async (argv) => {
     questions.push({
       type: "confirm",
       name: "install",
-      message: "Install Dev Packages?",
+      message: "Install Packages?",
       default: true,
     });
   }

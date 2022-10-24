@@ -10,6 +10,9 @@ const frames = ["-", "\\", "|", "/"];
 let index = 0;
 
 const createDefaultConfigs = async (argv) => {
+  if (!argv.c) {
+    return;
+  }
   const { config, template, framework, install } = await configWizard(argv);
 
   const templateFolder = template === "t" ? "typescript" : "javascript";
