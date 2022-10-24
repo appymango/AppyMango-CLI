@@ -1,4 +1,5 @@
-const { createDefaultConfigs, createFolder, wizard } = require("./options");
+const { createDefaultConfigs, createFolder } = require("./options");
+const { configWizard } = require("./wizards");
 
 const AppyMangoCli = (args = []) => {
   const isArgsAvailable = !!args.slice(2).length;

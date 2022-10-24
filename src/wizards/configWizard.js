@@ -4,11 +4,11 @@ const chalk = require("chalk");
 const {
   framework: frameworkOptions,
   template: templateOptions,
-} = require("./defaultOptions");
+} = require("../options/defaultOptions");
 
 const style = { padding: 1, borderColor: "blue", dimBorder: true };
 
-const wizard = async (argv) => {
+const configWizard = async (argv) => {
   const config = argv.c || argv.config || true;
   const template = argv.t;
   const framework = argv.r;
@@ -16,7 +16,7 @@ const wizard = async (argv) => {
 
   console.log(
     boxen(
-      chalk.blue(`\nWizard to Setup default configs in your project\n`),
+      chalk.blue(`\nconfigWizard to Setup default configs in your project\n`),
       style
     )
   );
@@ -62,4 +62,4 @@ const wizard = async (argv) => {
   return answers;
 };
 
-module.exports = { wizard };
+module.exports = { configWizard };

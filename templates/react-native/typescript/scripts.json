@@ -22,28 +22,8 @@
     "postinstall": "patch-package",
     "husky-install": "npx husky install && npx husky add .husky/pre-commit 'npx --no-install lint-staged'"
   },
-  "devDependencies": {
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
-    "cspell": "6.12.0",
-    "husky": "8.0.1",
-    "lint-staged": "13.0.3",
-    "prettier": "2.7.1",
-    "react-native-svg-transformer": "1.0.0",
-    "eslint-plugin-unused-imports": "2.0.0",
-    "eslint-plugin-no-relative-import-paths": "1.4.0",
-    "eslint-plugin-ft-flow": "2.0.1",
-    "@svgr/cli": "6.3.1",
-    "eslint-plugin-react": "7.31.8",
-    "eslint-plugin-react-native": "4.0.0",
-    "@babel/eslint-parser": "7.12.1"
-  },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "prettier --write"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ]
+    "*.{js,jsx,ts,tsx,json}": ["prettier --write"],
+    "*.{js,jsx,ts,tsx}": ["eslint --fix"]
   }
 }
