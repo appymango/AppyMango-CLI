@@ -17,7 +17,44 @@ const defaultOptions = {
       demandOption: false,
     },
   },
+  template: {
+    short: "t",
+    config: {
+      alias: "template",
+      describe: "Choose a template to use",
+      type: "string",
+      demandOption: false,
+      choices: ["-t", "-j"],
+    },
+  },
+  framework: {
+    short: "fr",
+    config: {
+      alias: "framework",
+      describe: "Choose a framework to use",
+      type: "string",
+      demandOption: false,
+      choices: ["-rn", "-r", "-nj"],
+    },
+  },
+  install: {
+    short: "i",
+    config: {
+      alias: "install",
+      describe: "Install Dev Dependencies ?",
+      type: "boolean",
+      demandOption: false,
+    },
+  },
 };
+
+let mappedOptions = {};
+for (let key in defaultOptions) {
+  mappedOptions = {
+    ...mappedOptions,
+    [defaultOptions[key].short]: defaultOptions[key].config,
+  };
+}
 
 const framework = {
   default: "rn",
@@ -36,4 +73,4 @@ const template = {
   ],
 };
 
-module.exports = { defaultOptions, framework, template };
+module.exports = { defaultOptions, mappedOptions, framework, template };
