@@ -41,7 +41,7 @@ const defaultOptions = {
     short: "i",
     config: {
       alias: "install",
-      describe: "Install Dev Dependencies ?",
+      describe: "Install Dependencies?",
       type: "boolean",
       demandOption: false,
     },
