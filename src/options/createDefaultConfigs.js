@@ -1,27 +1,36 @@
-const yargs = require("yargs");
 const chalk = require("chalk");
 const boxen = require("boxen");
 const path = require("path");
 const fs = require("fs-extra");
-const { COLOR } = require("../constants");
+const { wizard } = require("./wizard");
 
-const createDefaultConfigs = (argv) => {
-  if (argv.config !== null || argv.c !== null) {
-    let src = path.resolve(__dirname, "../rn-typescript");
+const createDefaultConfigs = async (argv) => {
+  const { config, template, framework, install } = await wizard(argv);
+
+  const templateFolder = template === "t" ? "typescript" : "javascript";
+  const frameworkFolder =
+    framework === "rn"
+      ? "react-native"
+      : framework === "r"
+      ? "react"
+      : "nextjs";
+
+  const isAllArgsAvailable = !!(config && template && framework && install);
+
+  if (isAllArgsAvailable) {
+    let src = path.resolve(
+      __dirname,
+      `../../templates/${frameworkFolder}/${templateFolder}`
+    );
     let dest = process.cwd();
 
     try {
       fs.copySync(src, dest, { overwrite: true });
-      chalk.green("Generated Config files successfully!");
+      console.log(chalk.green("Generated Config files successfully!"));
     } catch (err) {
-      console.error("ERROR: Generating config files", err);
+      console.log(chalk.red("ERROR: Generating config files", err));
     }
 
-    return;
-  }
-
-  if (argv.config === null && argv.c === null) {
-    yargs.showHelp();
     return;
   }
 };

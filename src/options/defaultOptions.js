@@ -24,17 +24,17 @@ const defaultOptions = {
       describe: "Choose a template to use",
       type: "string",
       demandOption: false,
-      choices: ["-t", "-j"],
+      choices: ["t", "j"],
     },
   },
   framework: {
-    short: "fr",
+    short: "r",
     config: {
       alias: "framework",
       describe: "Choose a framework to use",
       type: "string",
       demandOption: false,
-      choices: ["-rn", "-r", "-nj"],
+      choices: ["rn", "r", "nj"],
     },
   },
   install: {

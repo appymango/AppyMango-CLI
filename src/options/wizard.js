@@ -1,11 +1,19 @@
 const inquirer = require("inquirer");
 const boxen = require("boxen");
 const chalk = require("chalk");
-const { framework, template } = require("./defaultOptions");
+const {
+  framework: frameworkOptions,
+  template: templateOptions,
+} = require("./defaultOptions");
 
 const style = { padding: 1, borderColor: "blue", dimBorder: true };
 
-const wizard = async () => {
+const wizard = async (argv) => {
+  const config = argv.c || argv.config || true;
+  const template = argv.t;
+  const framework = argv.r;
+  const install = argv.i;
+
   console.log(
     boxen(
       chalk.blue(`\nWizard to Setup default configs in your project\n`),
@@ -13,34 +21,43 @@ const wizard = async () => {
     )
   );
   const questions = [];
-  //TODO: Add if checks for each config as a flag
-  questions.push({
-    type: "list",
-    name: "framework",
-    message: "Please choose which project framework to use",
-    choices: framework.choices,
-    default: framework.default,
-  });
 
-  questions.push({
-    type: "list",
-    name: "template",
-    message: "Please choose which project template to use",
-    choices: template.choices,
-    default: template.default,
-  });
+  if (!framework) {
+    questions.push({
+      type: "list",
+      name: "framework",
+      message: "Please choose which project framework to use",
+      choices: frameworkOptions.choices,
+      default: frameworkOptions.default,
+    });
+  }
 
-  // if (!options.install) {
-  questions.push({
-    type: "confirm",
-    name: "install",
-    message: "Install Dev Packages?",
-    default: true,
-  });
-  // }
+  if (!template) {
+    questions.push({
+      type: "list",
+      name: "template",
+      message: "Please choose which project template to use",
+      choices: templateOptions.choices,
+      default: templateOptions.default,
+    });
+  }
 
-  const answers = await inquirer.prompt(questions);
-  console.log("🚀 --- wizard --- answers", answers);
+  if (!install) {
+    questions.push({
+      type: "confirm",
+      name: "install",
+      message: "Install Dev Packages?",
+      default: true,
+    });
+  }
+
+  const answers = {
+    config,
+    template,
+    framework,
+    install,
+    ...(await inquirer.prompt(questions)),
+  };
 
   return answers;
 };
