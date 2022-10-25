@@ -2,7 +2,9 @@ const path = require("path");
 const fs = require("fs-extra");
 const { componentWizard } = require("../wizards");
 const { errorLog, successLog, loadingLog } = require("../logs");
-const { FRAME_INDEX, FRAMES } = require("../constants");
+const { FRAMES } = require("../constants");
+
+let FRAME_INDEX = 0;
 
 const createFolder = async (argv) => {
   //Only folder flag or default
