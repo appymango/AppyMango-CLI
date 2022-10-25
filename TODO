@@ -3,3 +3,6 @@
 ------------------------------------------------------------*/
 1. Create dependencies for each template and frameworks.
 2. Create Config files for each template and frameworks. 
+3. JS to TS
+4. Prepare npm library
+5. Test all configs with new projects
