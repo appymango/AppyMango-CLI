@@ -1,4 +1,9 @@
-const dependencies = ["react-native-dotenv", "axios"];
+const dependencies = [
+  "react-native-dotenv",
+  "axios",
+  "patch-package",
+  "postinstall-postinstall",
+];
 
 const devDependencies = [
   "@commitlint/cli",
