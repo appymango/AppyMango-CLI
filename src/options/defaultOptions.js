@@ -1,3 +1,4 @@
+//CLI
 const defaultOptions = {
   folder: {
     short: "f",
@@ -56,6 +57,7 @@ for (let key in defaultOptions) {
   };
 }
 
+//Wizard
 const framework = {
   default: "rn",
   choices: [

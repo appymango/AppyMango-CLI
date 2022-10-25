@@ -1,12 +1,9 @@
 const inquirer = require("inquirer");
-const boxen = require("boxen");
-const chalk = require("chalk");
+const { box } = require("../logs");
 const {
   framework: frameworkOptions,
   template: templateOptions,
 } = require("../options/defaultOptions");
-
-const style = { padding: 1, borderColor: "blue", dimBorder: true };
 
 const configWizard = async (argv) => {
   const config = argv.c || argv.config || true;
@@ -14,12 +11,7 @@ const configWizard = async (argv) => {
   const framework = argv.r;
   const install = argv.i;
 
-  console.log(
-    boxen(
-      chalk.blue(`\nWizard to Setup default configs in your project\n`),
-      style
-    )
-  );
+  box("Wizard to Setup default configs in your project");
 
   const questions = [];
 

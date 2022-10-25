@@ -1,19 +1,15 @@
 const inquirer = require("inquirer");
-const boxen = require("boxen");
-const chalk = require("chalk");
 const {
   template: templateOptions,
   framework: frameworkOptions,
 } = require("../options/defaultOptions");
-
-const style = { padding: 1, borderColor: "blue", dimBorder: true };
+const { box } = require("../logs");
 
 const componentWizard = async (argv) => {
   const folderName = argv.f || argv.folder;
 
-  console.log(
-    boxen(chalk.blue(`\nWizard to create default component folder\n`), style)
-  );
+  box("Wizard to create default component folder");
+
   const questions = [];
 
   if (!folderName || typeof folderName === "boolean") {

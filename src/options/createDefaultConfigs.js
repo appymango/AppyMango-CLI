@@ -1,18 +1,16 @@
-const chalk = require("chalk");
-const boxen = require("boxen");
 const path = require("path");
 const fs = require("fs-extra");
 const pkgInstall = require("pkg-install");
-const logUpdate = require("log-update");
 const { configWizard } = require("../wizards");
-
-const frames = ["-", "\\", "|", "/"];
-let index = 0;
+const { errorLog, successLog, loadingLog } = require("../logs");
+const { FRAME_INDEX, FRAMES } = require("../constants");
 
 const createDefaultConfigs = async (argv) => {
+  //Exit if No Config flag
   if (!argv.c) {
     return;
   }
+  //Generate wizard for Configs
   const { config, template, framework, install } = await configWizard(argv);
 
   const templateFolder = template === "t" ? "typescript" : "javascript";
@@ -31,24 +29,23 @@ const createDefaultConfigs = async (argv) => {
       `../../templates/${frameworkFolder}/${templateFolder}`
     );
     let dest = process.cwd();
-
-    //Dependencies to Install
-    const { dependencies, devDependencies } = require(path.resolve(
+    let srcDependencies = path.resolve(
       __dirname,
       `../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`
-    ));
+    );
+
+    //Dependencies to Install
+    const { dependencies, devDependencies } = require(srcDependencies);
 
     let loading;
 
     try {
       fs.copySync(src, dest, { overwrite: true });
-      console.log(chalk.green("\n✅ Generated Config files successfully!"));
+      successLog("Generated Config files successfully!");
 
       loading = setInterval(() => {
-        const frame = frames[(index = ++index % frames.length)];
-        logUpdate(
-          chalk.blue(`\n\n${frame} ⚡Installing Dependencies⚡ ${frame}\n\n`)
-        );
+        const frame = FRAMES[(FRAME_INDEX = ++FRAME_INDEX % FRAMES.length)];
+        loadingLog(frame, "Installing Dependencies");
       }, 80);
 
       await pkgInstall.install(dependencies, {
@@ -61,9 +58,9 @@ const createDefaultConfigs = async (argv) => {
         prefer: "yarn",
       });
 
-      console.log(chalk.green("✅ Dependencies installed successfully!\n"));
+      successLog("Dependencies installed successfully!");
     } catch (err) {
-      console.log(chalk.red("❌ ERROR: Generating config files\n", err, "\n"));
+      errorLog(err, "Generating config files");
     }
     //Clear loading
     loading && clearInterval(loading);

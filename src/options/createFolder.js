@@ -1,16 +1,15 @@
-const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs-extra");
-const logUpdate = require("log-update");
 const { componentWizard } = require("../wizards");
-
-const frames = ["-", "\\", "|", "/"];
-let index = 0;
+const { errorLog, successLog, loadingLog } = require("../logs");
+const { FRAME_INDEX, FRAMES } = require("../constants");
 
 const createFolder = async (argv) => {
+  //Only folder flag or default
   if (argv.c) {
     return;
   }
+  //Generate folder wizard
   const { folderName, template, framework } = await componentWizard(argv);
 
   const templateFolder = template === "t" ? "typescript" : "javascript";
@@ -33,23 +32,18 @@ const createFolder = async (argv) => {
     let loading;
 
     try {
-      console.log(
-        chalk.green("\n✅ Generated Component files successfully!\n")
-      );
+      successLog("Generated Component files successfully!");
 
       loading = setInterval(() => {
-        const frame = frames[(index = ++index % frames.length)];
-        logUpdate(
-          chalk.blue(`\n\n${frame} ⚡Creating Component Folder⚡ ${frame}\n\n`)
-        );
+        const frame = FRAMES[(FRAME_INDEX = ++FRAME_INDEX % FRAMES.length)];
+        loadingLog(frame, "Creating Component Folder");
       }, 80);
+
       fs.copySync(src, dest, { overwrite: true });
 
-      console.log(chalk.green("✅ Component folder created successfully!\n"));
+      successLog("Component folder created successfully!");
     } catch (err) {
-      console.log(
-        chalk.red("❌ ERROR: Creating component folder\n", err, "\n")
-      );
+      errorLog(err, "Creating component folder");
     }
     //Clear loading
     loading && clearInterval(loading);

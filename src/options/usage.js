@@ -3,10 +3,8 @@ const boxen = require("boxen");
 const figlet = require("figlet");
 const { defaultOptions } = require("./defaultOptions");
 const { CLI_NAME, COLOR } = require("../constants");
+const { style } = require("../logs");
 
-const style = { padding: 1, borderColor: "blue", dimBorder: true };
-
-//TODO: Make mapped logs
 const usage = chalk.hex(COLOR)(
   console.log(
     chalk.hex(COLOR)(
@@ -14,7 +12,7 @@ const usage = chalk.hex(COLOR)(
     ),
     "\n"
   ),
-  `\nUsage: ${CLI_NAME} -${defaultOptions.folder.short} <Folder Name>`,
+  `\nUsage: ${CLI_NAME} -${defaultOptions.folder.short} <Folder Name?>`,
   `\nUsage: ${CLI_NAME} -${defaultOptions.config.short} <Framework?> <Template?> <Install?>\n` +
     boxen(
       chalk.blue(
@@ -28,5 +26,3 @@ const usage = chalk.hex(COLOR)(
 );
 
 module.exports = { usage };
-
-// --Framework Choices: "-rn","-r","-nj" (React-Native, React, Next Js)\n--Template Choices: "-j", "-t" (Javascript, Typescript)
