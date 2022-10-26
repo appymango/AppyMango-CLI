@@ -7,7 +7,7 @@ const style = { padding: 1, borderColor: "blue", dimBorder: true };
 const box = (message) =>
   console.log(boxen(chalk.blue(`\n${message}\n`), style));
 
-const colorLog = (message) => {};
+const warningLog = (message) => console.log(chalk.yellow(`⚠❗ ${message}\n`));
 
 const successLog = (message) => console.log(chalk.green(`✅ ${message}\n`));
 
@@ -17,4 +17,4 @@ const errorLog = (error, message) =>
 const loadingLog = (frame, message) =>
   logUpdate(chalk.blue(`\n\n${frame} ⚡${message}⚡ ${frame}\n\n`));
 
-module.exports = { box, colorLog, errorLog, successLog, loadingLog, style };
+module.exports = { box, warningLog, errorLog, successLog, loadingLog, style };
