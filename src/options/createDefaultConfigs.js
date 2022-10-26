@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs-extra");
 const pkgInstall = require("pkg-install");
 const { configWizard } = require("../wizards");
-const { errorLog, successLog, loadingLog } = require("../logs");
+const { errorLog, successLog, loadingLog, warningLog } = require("../logs");
 const { FRAMES } = require("../constants");
 
 let FRAME_INDEX = 0;
