@@ -3,7 +3,7 @@
     "compileAll": "yarn fix:prettier && yarn compile && yarn fix:lint && yarn spell",
     "compile": "tsc --noEmit --pretty",
     "watch": "tsc -w",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "next lint && eslint . --ext .js,.jsx,.ts,.tsx",
     "spell": "cspell '**/*.tsx' '**/*.ts' '**/*.js' --config cspell.json --no-gitignore",
     "fix": "yarn fix:lint && yarn fix:prettier",
     "fix:lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
