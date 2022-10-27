@@ -9,7 +9,6 @@ const devDependencies = [
   "@commitlint/cli",
   "@commitlint/config-conventional",
   "cspell",
-  "husky",
   "lint-staged",
   "prettier",
   "react-native-svg-transformer",
