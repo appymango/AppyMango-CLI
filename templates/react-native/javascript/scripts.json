@@ -5,13 +5,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "pods": "npx pod-install",
-    "compileAll": "yarn fix:prettier && yarn compile && yarn fix:lint && yarn spell",
-    "compile": "tsc --noEmit --pretty",
-    "watch": "tsc -w",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "spell": "cspell '**/*.tsx' '**/*.ts' '**/*.js' --config cspell.json --no-gitignore",
+    "compileAll": "yarn fix:prettier && yarn fix:lint && yarn spell",
+    "lint": "eslint . --ext .js,.jsx",
+    "spell": "cspell '**/*.jsx' '**/*.js' --config cspell.json --no-gitignore",
     "fix": "yarn fix:lint && yarn fix:prettier",
-    "fix:lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
+    "fix:lint": "eslint . --fix --ext .js,.jsx",
     "fix:prettier": "prettier ./ --write --config ./.prettierrc --ignore-path ./.prettierignore",
     "clean": "./scripts/clean.sh",
     "linking": "npx react-native-asset",
@@ -20,10 +18,10 @@
     "device": "npx react-native run-ios --device '<device name>'",
     "build:apk": "cd android && ./gradlew assembleRelease",
     "postinstall": "patch-package",
-    "husky-install": "npx husky install && npx husky add .husky/pre-commit 'npx --no-install lint-staged'"
+    "husky-install": "npx husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": ["prettier --write"],
-    "*.{js,jsx,ts,tsx}": ["eslint --fix"]
+    "*.{js,jsx,json}": ["prettier --write"],
+    "*.{js,jsx}": ["eslint --fix"]
   }
 }

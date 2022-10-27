@@ -21,6 +21,7 @@ const devDependencies = [
   "eslint-plugin-react-native",
   "@babel/eslint-parser",
   "babel-plugin-module-resolver",
+  "babel-eslint",
 ];
 
 module.exports = { devDependencies, dependencies };
