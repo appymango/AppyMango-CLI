@@ -22,7 +22,6 @@
     "removeComments": true,
     "disableSizeLimit": true,
     "resolveJsonModule": true,
-    "types": ["react-native", "jest"],
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["assets/*"],
@@ -38,6 +37,7 @@
       "@state": ["src/recoil/hooks"],
       "@schemas": ["src/schemas"],
       "@screens": ["src/screens"],
+      "@pages": ["src/pages"],
       "@storage": ["src/storage"],
       "@theme": ["src/theme"],
       "@type/*": ["src/types/*"],

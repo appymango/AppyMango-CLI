@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "diemasmichiels.emulate",
     "aaron-bond.better-comments",
     "kisstkondoros.vscode-codemetrics",
     "streetsidesoftware.code-spell-checker",
