@@ -1,6 +1,6 @@
 {
   "name": "mango",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "CLI to create default configurations for the Projects",
   "main": "bin/index.js",
   "type": "commonjs",
