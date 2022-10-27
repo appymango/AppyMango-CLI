@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
-import React from "react";
-import styles from "./styles";
-import TProps from "./types";
+import {View, Text} from 'react-native';
+import React from 'react';
+import styles from './styles';
+import TProps from './types';
 
 const Component = (props: TProps) => {
   return (
