@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "compileAll": "yarn fix:prettier && yarn fix:lint && yarn spell",
+    "lint": "eslint . --ext .js,.jsx",
+    "spell": "cspell '**/*.jsx' '**/*.js' --config cspell.json --no-gitignore",
+    "fix": "yarn fix:lint && yarn fix:prettier",
+    "fix:lint": "eslint . --fix --ext .js,.jsx",
+    "fix:prettier": "prettier ./ --write --config ./.prettierrc --ignore-path ./.prettierignore",
+    "clean": "./scripts/clean.sh",
+    "svgr": "npx @svgr/cli --icon --out-dir ./src/components/icons --memo --index-template index-template.js --ignore-existing -- ./assets/icons",
+    "postinstall": "patch-package",
+    "husky-install": "npx husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json}": ["prettier --write"],
+    "*.{js,jsx}": ["eslint --fix"]
+  }
+}
