@@ -14,5 +14,8 @@
   "jsxSingleQuote": false,
   "bracketSpacing": false,
   "bracketSameLine": false,
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "importOrder": ["^components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

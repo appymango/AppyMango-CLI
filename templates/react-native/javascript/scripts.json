@@ -13,7 +13,7 @@
     "fix:prettier": "prettier ./ --write --config ./.prettierrc --ignore-path ./.prettierignore",
     "clean": "./scripts/clean.sh",
     "linking": "npx react-native-asset",
-    "svgr": "npx @svgr/cli --icon --out-dir ./src/components/icons --native --memo --typescript --index-template index-template.js --ignore-existing -- ./assets/icons",
+    "svgr": "npx @svgr/cli --icon --out-dir ./src/components/icons --native --memo --index-template index-template.js --ignore-existing -- ./assets/icons",
     "splash": "npx react-native generate-bootsplash ./assets/images/splash.png",
     "device": "npx react-native run-ios --device '<device name>'",
     "build:apk": "cd android && ./gradlew assembleRelease",
