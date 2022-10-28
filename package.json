@@ -6,10 +6,10 @@
   "type": "commonjs",
   "scripts": {
     "start": "node dist/src/index.js",
+    "build": "npm run build.tsc && npm run build.bundle && npm run minify",
     "build.tsc": "tsc --pretty",
     "build.bundle": "rollup -c",
     "minify": "terser --compress --mangle --toplevel --output dist/src/index.js -- dist/src/index.js",
-    "build": "npm run build.tsc && npm run build.bundle && npm run minify",
     "build.dev": "npm run build.tsc && npm run build.bundle",
     "dev": "npm run build.dev && npm start",
     "version": "npm build",
