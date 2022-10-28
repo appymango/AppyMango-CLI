@@ -1,6 +1,6 @@
 {
-  "name": "mango",
-  "version": "1.3.1",
+  "name": "@appymango/cli",
+  "version": "1.4.0",
   "description": "CLI to create default configurations for the Projects",
   "main": "dist/src/index.js",
   "type": "commonjs",
@@ -12,11 +12,9 @@
     "build": "npm run build.tsc && npm run build.bundle && npm run minify",
     "build.dev": "npm run build.tsc && npm run build.bundle",
     "dev": "npm run build.dev && npm start",
-    "version": "npm build"
+    "version": "npm build",
+    "publish": "npm publish --access public"
   },
-  "files": [
-    "dist/src/index.js"
-  ],
   "bin": {
     "mango": "dist/src/index.js"
   },

@@ -40,12 +40,12 @@ const createDefaultConfigs = async (argv: {
   if (isAllArgsAvailable) {
     let src = Path.resolve(
       __dirname,
-      `../../templates/${frameworkFolder}/${templateFolder}`,
+      `../../../templates/${frameworkFolder}/${templateFolder}`,
     );
     let dest = process.cwd();
     let srcDependencies = Path.resolve(
       __dirname,
-      `../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`,
+      `../../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`,
     );
 
     //Dependencies to Install

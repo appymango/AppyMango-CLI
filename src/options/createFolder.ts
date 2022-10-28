@@ -31,7 +31,7 @@ const createFolder = async (argv: {c: boolean}) => {
   if (isAllArgsAvailable) {
     let src = path.resolve(
       __dirname,
-      `../../folder/${frameworkFolder}/${templateFolder}/component`,
+      `../../../folder/${frameworkFolder}/${templateFolder}/component`,
     );
     let dest = `${process.cwd()}/${folderName}`;
 
