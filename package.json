@@ -1,12 +1,22 @@
 {
-  "name": "mango",
-  "version": "1.3.1",
+  "name": "@appymango/cli",
+  "version": "1.4.1",
   "description": "CLI to create default configurations for the Projects",
-  "main": "bin/index.js",
+  "main": "dist/src/index.js",
   "type": "commonjs",
-  "scripts": {},
+  "scripts": {
+    "start": "node dist/src/index.js",
+    "build.tsc": "tsc --pretty",
+    "build.bundle": "rollup -c",
+    "minify": "terser --compress --mangle --toplevel --output dist/src/index.js -- dist/src/index.js",
+    "build": "npm run build.tsc && npm run build.bundle && npm run minify",
+    "build.dev": "npm run build.tsc && npm run build.bundle",
+    "dev": "npm run build.dev && npm start",
+    "version": "npm build",
+    "deploy": "npm publish --access public"
+  },
   "bin": {
-    "mango": "./bin/index.js"
+    "mango": "dist/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/appymango/AppyMango-CLI/issues"
   },
-  "homepage": "https://github.com/appymango/AppyMango-CLI#readme",
+  "homepage": "https://github.com/appymango/AppyMango-CLI#Readme",
   "dependencies": {
     "boxen": "5.1.2",
     "chalk": "^4.1.2",
@@ -34,5 +44,15 @@
     "log-update": "4.0.0",
     "pkg-install": "1.0.0",
     "yargs": "^17.6.0"
+  },
+  "devDependencies": {
+    "rollup": "3.2.3",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "terser": "5.15.1",
+    "tslint": "6.1.3",
+    "tslint-ionic-rules": "0.0.21",
+    "typescript": "4.8.4"
   }
 }

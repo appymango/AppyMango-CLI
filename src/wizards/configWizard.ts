@@ -1,25 +1,31 @@
-const inquirer = require("inquirer");
-const { box } = require("../logs");
+const inquirer = require('inquirer');
+const {box: configBox} = require('../logs');
 const {
   framework: frameworkOptions,
   template: templateOptions,
-} = require("../options/defaultOptions");
+} = require('../options/defaultOptions');
 
-const configWizard = async (argv) => {
+const configWizard = async (argv: {
+  r: string;
+  i: boolean;
+  c: boolean;
+  t: string;
+  config: string;
+}) => {
   const config = argv.c || argv.config || true;
   const template = argv.t;
   const framework = argv.r;
   const install = argv.i;
 
-  box("Wizard to Setup default configs in your project");
+  configBox('Wizard to Setup default configs in your project');
 
   const questions = [];
 
   if (!framework) {
     questions.push({
-      type: "list",
-      name: "framework",
-      message: "Please choose which project framework to use",
+      type: 'list',
+      name: 'framework',
+      message: 'Please choose which project framework to use',
       choices: frameworkOptions.choices,
       default: frameworkOptions.default,
     });
@@ -27,9 +33,9 @@ const configWizard = async (argv) => {
 
   if (!template) {
     questions.push({
-      type: "list",
-      name: "template",
-      message: "Please choose which project template to use",
+      type: 'list',
+      name: 'template',
+      message: 'Please choose which project template to use',
       choices: templateOptions.choices,
       default: templateOptions.default,
     });
@@ -37,9 +43,9 @@ const configWizard = async (argv) => {
 
   if (!install) {
     questions.push({
-      type: "confirm",
-      name: "install",
-      message: "Install Packages?",
+      type: 'confirm',
+      name: 'install',
+      message: 'Install Packages?',
       default: true,
     });
   }
@@ -55,4 +61,4 @@ const configWizard = async (argv) => {
   return answers;
 };
 
-module.exports = { configWizard };
+module.exports = configWizard;
