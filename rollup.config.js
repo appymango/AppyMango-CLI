@@ -3,7 +3,7 @@ const commonjs = require('rollup-plugin-commonjs');
 const json = require('rollup-plugin-json');
 
 module.exports = {
-  input: 'dist/src/main.js',
+  input: 'dist/src/index.js',
   output: {
     file: 'dist/src/index.js',
     format: 'cjs',
