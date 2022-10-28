@@ -30,9 +30,9 @@ const createDefaultConfigs = (argv) => __awaiter(void 0, void 0, void 0, functio
             : 'nextjs';
     const isAllArgsAvailable = !!(config && template && framework && install);
     if (isAllArgsAvailable) {
-        let src = Path.resolve(__dirname, `../../templates/${frameworkFolder}/${templateFolder}`);
+        let src = Path.resolve(__dirname, `../../../templates/${frameworkFolder}/${templateFolder}`);
         let dest = process.cwd();
-        let srcDependencies = Path.resolve(__dirname, `../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`);
+        let srcDependencies = Path.resolve(__dirname, `../../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`);
         //Dependencies to Install
         const { dependencies, devDependencies } = require(srcDependencies);
         let loading;

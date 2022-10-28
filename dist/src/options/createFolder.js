@@ -29,7 +29,7 @@ const createFolder = (argv) => __awaiter(void 0, void 0, void 0, function* () {
             : 'nextjs';
     const isAllArgsAvailable = !!(folderName && template && framework);
     if (isAllArgsAvailable) {
-        let src = path.resolve(__dirname, `../../folder/${frameworkFolder}/${templateFolder}/component`);
+        let src = path.resolve(__dirname, `../../../folder/${frameworkFolder}/${templateFolder}/component`);
         let dest = `${process.cwd()}/${folderName}`;
         let loading;
         try {
