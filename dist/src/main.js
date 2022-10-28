@@ -1,1 +1,1 @@
-"use strict";const{cf:mcf,cdc:mcdc}=require("./options"),AppyMangoCli=()=>{const args=process.argv,argv=require("yargs/yargs")(args.slice(2)).argv;mcf(argv),mcdc(argv)};AppyMangoCli();
+"use strict";const{cf:mcf,cdc:mcdc}=require("./options"),AppyMangoCli=()=>{const c=process.argv,r=require("yargs/yargs")(c.slice(2)).argv;mcf(r),mcdc(r)};AppyMangoCli();

@@ -1,6 +1,6 @@
 {
   "name": "@appymango/cli",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "CLI to create default configurations for the Projects",
   "main": "dist/src/index.js",
   "type": "commonjs",
@@ -9,7 +9,7 @@
     "build": "npm run build.tsc && npm run build.bundle && npm run minify",
     "build.tsc": "tsc --pretty",
     "build.bundle": "rollup -c",
-    "minify": "minify-all-js dist/src dist/src && minify-all-js dependencies dependencies",
+    "minify": "minify-all-js dist/src dist/src -M && minify-all-js dependencies dependencies -M",
     "build.dev": "npm run build.tsc && npm run build.bundle",
     "dev": "npm run build.dev && npm start",
     "version": "npm build",
