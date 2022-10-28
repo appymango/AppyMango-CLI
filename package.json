@@ -9,7 +9,7 @@
     "build": "npm run build.tsc && npm run build.bundle && npm run minify",
     "build.tsc": "tsc --pretty",
     "build.bundle": "rollup -c",
-    "minify": "terser --compress --mangle --toplevel --output dist/src/index.js -- dist/src/index.js",
+    "minify": "minify-all-js dist/src dist/src && minify-all-js dependencies dependencies",
     "build.dev": "npm run build.tsc && npm run build.bundle",
     "dev": "npm run build.dev && npm start",
     "version": "npm build",
@@ -46,11 +46,11 @@
     "yargs": "^17.6.0"
   },
   "devDependencies": {
+    "minify-all-js": "0.1.9",
     "rollup": "3.2.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "terser": "5.15.1",
     "tslint": "6.1.3",
     "tslint-ionic-rules": "0.0.21",
     "typescript": "4.8.4"

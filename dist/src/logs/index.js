@@ -1,11 +1,1 @@
-"use strict";
-const boxen = require('boxen');
-const chalk = require('chalk');
-const logUpdate = require('log-update');
-const style = { padding: 1, borderColor: 'blue', dimBorder: true };
-const box = (message) => console.log(boxen(chalk.blue(`\n${message}\n`), style));
-const warningLog = (message) => console.log(chalk.yellow(`⚠❗ ${message}\n`));
-const successLog = (message) => console.log(chalk.green(`✅ ${message}\n`));
-const errorLog = (error, message) => console.log(chalk.red(`❌ ERROR: ${message}\n`, error, '\n'));
-const loadingLog = (frame, message) => logUpdate(chalk.blue(`\n\n${frame} ⚡${message}⚡ ${frame}\n\n`));
-module.exports = { box, warningLog, errorLog, successLog, loadingLog, style };
+"use strict";const boxen=require("boxen"),chalk=require("chalk"),logUpdate=require("log-update"),style={padding:1,borderColor:"blue",dimBorder:!0},box=message=>console.log(boxen(chalk.blue(`\n${message}\n`),style)),warningLog=message=>console.log(chalk.yellow(`⚠❗ ${message}\n`)),successLog=message=>console.log(chalk.green(`✅ ${message}\n`)),errorLog=(error,message)=>console.log(chalk.red(`❌ ERROR: ${message}\n`,error,"\n")),loadingLog=(frame,message)=>logUpdate(chalk.blue(`\n\n${frame} ⚡${message}⚡ ${frame}\n\n`));module.exports={box:box,warningLog:warningLog,errorLog:errorLog,successLog:successLog,loadingLog:loadingLog,style:style};
