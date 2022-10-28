@@ -13,7 +13,7 @@
     "build.dev": "npm run build.tsc && npm run build.bundle",
     "dev": "npm run build.dev && npm start",
     "version": "npm build",
-    "publish": "npm publish --access public"
+    "deploy": "npm publish --access public"
   },
   "bin": {
     "mango": "dist/src/index.js"
