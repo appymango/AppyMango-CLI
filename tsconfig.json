@@ -13,7 +13,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "dist/src",
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "removeComments": true
   },
   "include": ["./src/**/*"]
   // "folders": ["./src"]

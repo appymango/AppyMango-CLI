@@ -15,11 +15,9 @@ const { errorLog: erLog, successLog: suLog, loadingLog: loLog, } = require('../l
 const { FRAMES: FOLDER_FRAMES } = require('../constants');
 let FRAME_INDEX = 0;
 const createFolder = (argv) => __awaiter(void 0, void 0, void 0, function* () {
-    //Only folder flag or default
     if (argv.c) {
         return;
     }
-    //Generate folder wizard
     const { folderName, template, framework } = yield folderWizard(argv);
     const templateFolder = template === 't' ? 'typescript' : 'javascript';
     const frameworkFolder = framework === 'rn'
@@ -44,7 +42,6 @@ const createFolder = (argv) => __awaiter(void 0, void 0, void 0, function* () {
         catch (err) {
             erLog(err, 'Creating component folder');
         }
-        //Clear loading
         loading && clearInterval(loading);
         return;
     }

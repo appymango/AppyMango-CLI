@@ -16,11 +16,9 @@ const { errorLog: eLog, successLog: sLog, loadingLog: lLog, warningLog: wLog, } 
 const { FRAMES: CONFIG_FRAMES } = require('../constants');
 let CONFIG_FRAME_INDEX = 0;
 const createDefaultConfigs = (argv) => __awaiter(void 0, void 0, void 0, function* () {
-    //Exit if No Config flag
     if (!argv.c) {
         return;
     }
-    //Generate wizard for Configs
     const { config, template, framework, install } = yield defaultConfigWizard(argv);
     const templateFolder = template === 't' ? 'typescript' : 'javascript';
     const frameworkFolder = framework === 'rn'
@@ -33,7 +31,6 @@ const createDefaultConfigs = (argv) => __awaiter(void 0, void 0, void 0, functio
         let src = Path.resolve(__dirname, `../../../templates/${frameworkFolder}/${templateFolder}`);
         let dest = process.cwd();
         let srcDependencies = Path.resolve(__dirname, `../../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`);
-        //Dependencies to Install
         const { dependencies, devDependencies } = require(srcDependencies);
         let loading;
         try {
@@ -57,7 +54,6 @@ const createDefaultConfigs = (argv) => __awaiter(void 0, void 0, void 0, functio
         catch (err) {
             eLog(err, 'Generating config files');
         }
-        //Clear loading
         loading && clearInterval(loading);
         return;
     }

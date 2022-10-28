@@ -52,7 +52,6 @@ let mappedOptions = {};
 for (let key in defaultOptions) {
     mappedOptions = Object.assign(Object.assign({}, mappedOptions), { [defaultOptions[key].short]: defaultOptions[key].config });
 }
-//Wizard
 const framework = {
     default: 'rn',
     choices: [

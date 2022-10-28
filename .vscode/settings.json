@@ -6,6 +6,7 @@
     "svgr",
     "toplevel",
     "trivago",
+    "uglifyjs",
     "Umapathi"
   ]
 }
