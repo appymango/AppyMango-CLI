@@ -1,6 +1,6 @@
 {
   "name": "@appymango/cli",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "CLI to create default configurations for the Projects",
   "main": "dist/src/index.js",
   "type": "commonjs",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/appymango/AppyMango-CLI/issues"
   },
-  "homepage": "https://github.com/appymango/AppyMango-CLI#readme",
+  "homepage": "https://github.com/appymango/AppyMango-CLI#Readme",
   "dependencies": {
     "boxen": "5.1.2",
     "chalk": "^4.1.2",
