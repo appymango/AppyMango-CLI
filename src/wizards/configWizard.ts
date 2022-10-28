@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {box: bo} = require('../logs');
+const {box: configBox} = require('../logs');
 const {
   framework: frameworkOptions,
   template: templateOptions,
@@ -17,7 +17,7 @@ const configWizard = async (argv: {
   const framework = argv.r;
   const install = argv.i;
 
-  bo('Wizard to Setup default configs in your project');
+  configBox('Wizard to Setup default configs in your project');
 
   const questions = [];
 
@@ -61,4 +61,4 @@ const configWizard = async (argv: {
   return answers;
 };
 
-module.exports = {configWizard};
+module.exports = configWizard;

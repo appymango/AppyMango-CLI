@@ -11,7 +11,6 @@ const {FRAMES: FOLDER_FRAMES} = require('../constants');
 let FRAME_INDEX = 0;
 
 const createFolder = async (argv: {c: boolean}) => {
-  console.log('🚀 --- createFolder --- argv', argv);
   //Only folder flag or default
   if (argv.c) {
     return;
@@ -60,4 +59,4 @@ const createFolder = async (argv: {c: boolean}) => {
   }
 };
 
-module.exports = {createFolder};
+module.exports = createFolder;

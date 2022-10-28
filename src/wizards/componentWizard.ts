@@ -1,11 +1,11 @@
 const inquirers = require('inquirer');
 const {template: to, framework: fo} = require('../options/defaultOptions');
-const {box: boxes} = require('../logs');
+const {box: wizardBox} = require('../logs');
 
 const componentWizard = async (argv: {f: boolean; folder: string}) => {
   const folderName = argv.f || argv.folder;
 
-  boxes('Wizard to create default component folder');
+  wizardBox('Wizard to create default component folder');
 
   const questions = [];
 
@@ -39,4 +39,4 @@ const componentWizard = async (argv: {f: boolean; folder: string}) => {
   return answers;
 };
 
-module.exports = {componentWizard};
+module.exports = componentWizard;

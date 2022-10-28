@@ -1,7 +1,7 @@
 const Path = require('path');
 const fsExtra = require('fs-extra');
 const pkgInstall = require('pkg-install');
-const {cw: defaultConfigWizard} = require('../wizards');
+const {cW: defaultConfigWizard} = require('../wizards');
 const {
   errorLog: eLog,
   successLog: sLog,
@@ -18,13 +18,14 @@ const createDefaultConfigs = async (argv: {
   t: string;
   config: string;
 }) => {
-  console.log('🚀 --- createDefaultConfigs --- argv', argv);
   //Exit if No Config flag
   if (!argv.c) {
     return;
   }
   //Generate wizard for Configs
-  const {config, template, framework, install} = await configWizard(argv);
+  const {config, template, framework, install} = await defaultConfigWizard(
+    argv,
+  );
 
   const templateFolder = template === 't' ? 'typescript' : 'javascript';
   const frameworkFolder =
@@ -88,4 +89,4 @@ const createDefaultConfigs = async (argv: {
   }
 };
 
-module.exports = {createDefaultConfigs};
+module.exports = createDefaultConfigs;
