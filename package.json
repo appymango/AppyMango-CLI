@@ -1,6 +1,6 @@
 {
   "name": "@appymango/cli",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "CLI to create default configurations for the Projects",
   "main": "dist/src/index.js",
   "type": "commonjs",
