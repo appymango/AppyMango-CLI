@@ -1,28 +1,26 @@
-const chalk = require("chalk");
-const boxen = require("boxen");
-const figlet = require("figlet");
-const { defaultOptions } = require("./defaultOptions");
-const { CLI_NAME, COLOR } = require("../constants");
-const { style } = require("../logs");
+const chalks = require('chalk');
+const boxens = require('boxen');
+const figlet = require('figlet');
+const {defaultOptions: dO} = require('./dO');
+const {CLI_NAME: CLI, COLOR: CLR} = require('../constants');
+const {style: sts} = require('../logs');
 
-const usage = chalk.hex(COLOR)(
+const usage = chalks.hex(CLR)(
   console.log(
-    chalk.hex(COLOR)(
-      figlet.textSync("Appy Mango", { horizontalLayout: "full" })
-    ),
-    "\n"
+    chalks.hex(CLR)(figlet.textSync('Appy Mango', {horizontalLayout: 'full'})),
+    '\n',
   ),
-  `\nUsage: ${CLI_NAME} -${defaultOptions.folder.short} <Folder Name?>`,
-  `\nUsage: ${CLI_NAME} -${defaultOptions.config.short} <Framework?> <Template?> <Install?>\n` +
-    boxen(
-      chalk.blue(
-        `\n-${defaultOptions.folder.short} : ${defaultOptions.folder.config.describe}\n`,
+  `\nUsage: ${CLI} -${dO.folder.short} <Folder Name?>`,
+  `\nUsage: ${CLI} -${dO.config.short} <Framework?> <Template?> <Install?>\n` +
+    boxens(
+      chalks.blue(
+        `\n-${dO.folder.short} : ${dO.folder.config.describe}\n`,
 
-        `\n-${defaultOptions.config.short} : ${defaultOptions.config.config.describe}\n`
+        `\n-${dO.config.short} : ${dO.config.config.describe}\n`,
       ),
-      style
+      sts,
     ) +
-    "\n"
+    '\n',
 );
 
-module.exports = { usage };
+module.exports = {usage};

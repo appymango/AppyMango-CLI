@@ -1,12 +1,24 @@
-const path = require('path');
-const fs = require('fs-extra');
+const Path = require('path');
+const fsExtra = require('fs-extra');
 const pkgInstall = require('pkg-install');
-const {configWizard} = require('../wizards');
-const {errorLog, successLog, loadingLog, warningLog} = require('../logs');
-const {FRAMES} = require('../constants');
+const {cw: defaultConfigWizard} = require('../wizards');
+const {
+  errorLog: eLog,
+  successLog: sLog,
+  loadingLog: lLog,
+  warningLog: wLog,
+} = require('../logs');
+const {FRAMES: CONFIG_FRAMES} = require('../constants');
 
-let FRAME_INDEX = 0;
-const createDefaultConfigs = async argv => {
+let CONFIG_FRAME_INDEX = 0;
+const createDefaultConfigs = async (argv: {
+  c: boolean;
+  r: string;
+  i: boolean;
+  t: string;
+  config: string;
+}) => {
+  console.log('🚀 --- createDefaultConfigs --- argv', argv);
   //Exit if No Config flag
   if (!argv.c) {
     return;
@@ -25,12 +37,12 @@ const createDefaultConfigs = async argv => {
   const isAllArgsAvailable = !!(config && template && framework && install);
 
   if (isAllArgsAvailable) {
-    let src = path.resolve(
+    let src = Path.resolve(
       __dirname,
       `../../templates/${frameworkFolder}/${templateFolder}`,
     );
     let dest = process.cwd();
-    let srcDependencies = path.resolve(
+    let srcDependencies = Path.resolve(
       __dirname,
       `../../dependencies/${frameworkFolder}/${templateFolder}/dependencies.js`,
     );
@@ -41,12 +53,15 @@ const createDefaultConfigs = async argv => {
     let loading;
 
     try {
-      fs.copySync(src, dest, {overwrite: true});
-      successLog('Generated Config files successfully!');
+      fsExtra.copySync(src, dest, {overwrite: true});
+      sLog('Generated Config files successfully!');
 
       loading = setInterval(() => {
-        const frame = FRAMES[(FRAME_INDEX = ++FRAME_INDEX % FRAMES.length)];
-        loadingLog(frame, 'Installing Dependencies');
+        const frame =
+          CONFIG_FRAMES[
+            (CONFIG_FRAME_INDEX = ++CONFIG_FRAME_INDEX % CONFIG_FRAMES.length)
+          ];
+        lLog(frame, 'Installing Dependencies');
       }, 80);
 
       await pkgInstall.install(dependencies, {
@@ -59,12 +74,12 @@ const createDefaultConfigs = async argv => {
         prefer: 'yarn',
       });
 
-      successLog('Dependencies installed successfully!');
-      warningLog(
+      sLog('Dependencies installed successfully!');
+      wLog(
         "Don't forget to delete the files if exists - '.prettierrc.js', '.eslintrc.js'",
       );
     } catch (err) {
-      errorLog(err, 'Generating config files');
+      eLog(err, 'Generating config files');
     }
     //Clear loading
     loading && clearInterval(loading);

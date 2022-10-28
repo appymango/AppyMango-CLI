@@ -1,13 +1,13 @@
-const yargs = require("yargs");
-const { usage } = require("./usage");
-const { createDefaultConfigs } = require("./createDefaultConfigs");
-const { createFolder } = require("./createFolder");
-const { mappedOptions } = require("./defaultOptions");
+const yargs = require('yargs');
+const {usage: us} = require('./usage');
+const {createDefaultConfigs: cdc} = require('./createDefaultConfigs');
+const {createFolder: cf} = require('./createFolder');
+const {mappedOptions: mo} = require('./defaultOptions');
 
-const options = yargs.usage(usage).options(mappedOptions).help(true).argv;
+const options = yargs.usage(us).options(mo).help(true).argv;
 
 module.exports = {
   options,
-  createFolder,
-  createDefaultConfigs,
+  cf,
+  cdc,
 };

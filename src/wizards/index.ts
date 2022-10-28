@@ -1,4 +1,4 @@
-const { configWizard } = require("./configWizard");
-const { componentWizard } = require("./componentWizard");
+const {configWizard: cW} = require('./configWizard');
+const {componentWizard: cmW} = require('./componentWizard');
 
-module.exports = { configWizard, componentWizard };
+module.exports = {cW, cmW};

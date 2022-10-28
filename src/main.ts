@@ -1,4 +1,4 @@
-const {createDefaultConfigs, createFolder} = require('./options');
+const {cf: mcf, cdc: mcdc} = require('./options');
 
 const AppyMangoCli = () => {
   const args = process.argv;
@@ -6,10 +6,10 @@ const AppyMangoCli = () => {
   const argv = require('yargs/yargs')(args.slice(2)).argv;
 
   //* Create Default Folder Component
-  createFolder(argv);
+  mcf(argv);
 
   //* Create Default Configs
-  createDefaultConfigs(argv);
+  mcdc(argv);
 
   return;
 };

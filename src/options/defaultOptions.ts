@@ -1,49 +1,96 @@
-//CLI
+type TDefaultOptions = {
+  folder: {
+    short: string;
+    config: {
+      alias: string;
+      describe: string;
+      type: string;
+      demandOption: boolean;
+    };
+  };
+  config: {
+    short: string;
+    config: {
+      alias: string;
+      describe: string;
+      type: string;
+      demandOption: boolean;
+    };
+  };
+  template: {
+    short: string;
+    config: {
+      alias: string;
+      describe: string;
+      type: string;
+      demandOption: boolean;
+    };
+  };
+  framework: {
+    short: string;
+    config: {
+      alias: string;
+      describe: string;
+      type: string;
+      demandOption: boolean;
+    };
+  };
+  install: {
+    short: string;
+    config: {
+      alias: string;
+      describe: string;
+      type: string;
+      demandOption: boolean;
+    };
+  };
+};
+
 const defaultOptions = {
   folder: {
-    short: "f",
+    short: 'f',
     config: {
-      alias: "folder",
-      describe: "Creates a folder component with default files",
-      type: "string",
+      alias: 'folder',
+      describe: 'Creates a folder component with default files',
+      type: 'string',
       demandOption: false,
     },
   },
   config: {
-    short: "c",
+    short: 'c',
     config: {
-      alias: "config",
-      describe: "Creates default config files inside your project",
-      type: "boolean",
+      alias: 'config',
+      describe: 'Creates default config files inside your project',
+      type: 'boolean',
       demandOption: false,
     },
   },
   template: {
-    short: "t",
+    short: 't',
     config: {
-      alias: "template",
-      describe: "Choose a template to use",
-      type: "string",
+      alias: 'template',
+      describe: 'Choose a template to use',
+      type: 'string',
       demandOption: false,
-      choices: ["t", "j"],
+      choices: ['t', 'j'],
     },
   },
   framework: {
-    short: "r",
+    short: 'r',
     config: {
-      alias: "framework",
-      describe: "Choose a framework to use",
-      type: "string",
+      alias: 'framework',
+      describe: 'Choose a framework to use',
+      type: 'string',
       demandOption: false,
-      choices: ["rn", "r", "nj"],
+      choices: ['rn', 'r', 'nj'],
     },
   },
   install: {
-    short: "i",
+    short: 'i',
     config: {
-      alias: "install",
-      describe: "Install Dependencies?",
-      type: "boolean",
+      alias: 'install',
+      describe: 'Install Dependencies?',
+      type: 'boolean',
       demandOption: false,
     },
   },
@@ -53,26 +100,27 @@ let mappedOptions = {};
 for (let key in defaultOptions) {
   mappedOptions = {
     ...mappedOptions,
-    [defaultOptions[key].short]: defaultOptions[key].config,
+    [defaultOptions[key as keyof typeof defaultOptions].short]:
+      defaultOptions[key as keyof typeof defaultOptions].config,
   };
 }
 
 //Wizard
 const framework = {
-  default: "rn",
+  default: 'rn',
   choices: [
-    { name: "React-Native", value: "rn" },
-    { name: "React", value: "r" },
-    { name: "Next Js", value: "nj" },
+    {name: 'React-Native', value: 'rn'},
+    {name: 'React', value: 'r'},
+    {name: 'Next Js', value: 'nj'},
   ],
 };
 
 const template = {
-  default: "t",
+  default: 't',
   choices: [
-    { name: "JavaScript", value: "j" },
-    { name: "TypeScript", value: "t" },
+    {name: 'JavaScript', value: 'j'},
+    {name: 'TypeScript', value: 't'},
   ],
 };
 
-module.exports = { defaultOptions, mappedOptions, framework, template };
+module.exports = {defaultOptions, mappedOptions, framework, template};
