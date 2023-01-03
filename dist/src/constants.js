@@ -1,1 +1,0 @@
-"use strict";const CLI_NAME="yarn mango",COLOR="#FFC942",FRAMES=["-","\\","|","/"];module.exports={CLI_NAME:CLI_NAME,COLOR:COLOR,FRAMES:FRAMES};

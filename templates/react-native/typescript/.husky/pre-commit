@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-## Code Spell Check
-git diff --name-only --cached | npx cspell '**/*.tsx' '**/*.ts' '**/*.js' -c cspell.json --no-gitignore --no-must-find-files --file-list stdin
-## Lint Staged
-npx --no-install lint-staged

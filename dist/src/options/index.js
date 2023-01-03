@@ -1,1 +1,0 @@
-"use strict";const yargs=require("yargs"),cdc=require("./createDefaultConfigs"),cf=require("./createFolder"),{usage:us}=require("./usage"),{mappedOptions:mo}=require("./defaultOptions"),options=yargs.usage(us).options(mo).help(!0).argv;module.exports={options:options,cf:cf,cdc:cdc};
