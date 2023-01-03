@@ -11,7 +11,8 @@
     "react-native",
     "jest",
     "no-relative-import-paths",
-    "unused-imports"
+    "unused-imports",
+    "import"
   ],
   "rules": {
     "semi": ["error", "always"],
@@ -28,7 +29,8 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "import/no-unused-modules": [1, {"unusedExports": true}]
   },
   "parserOptions": {
     "ecmaFeatures": {
