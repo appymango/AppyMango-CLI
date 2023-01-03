@@ -22,5 +22,6 @@ const dependencies = [
     'babel-eslint',
     '@trivago/prettier-plugin-sort-imports',
     'eslint-plugin-import',
+    'depcheck',
   ];
 module.exports = {devDependencies: devDependencies, dependencies: dependencies};

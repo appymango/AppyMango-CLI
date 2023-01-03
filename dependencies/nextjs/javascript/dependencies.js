@@ -12,5 +12,6 @@ const dependencies = ['axios', 'patch-package', 'postinstall-postinstall'],
     'eslint-plugin-react',
     '@trivago/prettier-plugin-sort-imports',
     'eslint-plugin-import',
+    'depcheck',
   ];
 module.exports = {devDependencies: devDependencies, dependencies: dependencies};

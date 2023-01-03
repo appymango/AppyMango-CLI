@@ -20,5 +20,6 @@ const dependencies = [
     '@babel/eslint-parser',
     'babel-plugin-module-resolver',
     'ts-prune',
+    'depcheck',
   ];
 module.exports = {devDependencies: devDependencies, dependencies: dependencies};

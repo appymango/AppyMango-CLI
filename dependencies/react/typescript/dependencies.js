@@ -11,5 +11,6 @@ const dependencies = ['axios', 'patch-package', 'postinstall-postinstall'],
     '@svgr/cli',
     'eslint-plugin-react',
     'ts-prune',
+    'depcheck',
   ];
 module.exports = {devDependencies: devDependencies, dependencies: dependencies};

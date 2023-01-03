@@ -3,6 +3,7 @@
     "compileAll": "yarn fix:prettier && yarn fix:lint && yarn spell",
     "lint": "eslint . --ext .js,.jsx",
     "spell": "cspell '**/*.jsx' '**/*.js' --config cspell.json --no-gitignore",
+    "depCheck": "npx depcheck",
     "fix": "yarn fix:lint && yarn fix:prettier",
     "fix:lint": "eslint . --fix --ext .js,.jsx",
     "fix:prettier": "prettier ./ --write --config ./.prettierrc --ignore-path ./.prettierignore",
