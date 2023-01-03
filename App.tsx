@@ -18,6 +18,7 @@ import {
   useColorScheme,
   View,
 } from "react-native";
+import axios from "axios";
 // import { Test } from "./src";
 
 import {

@@ -11,6 +11,7 @@
     "find-deadcode": "ts-prune -e"
   },
   "dependencies": {
+    "axios": "^1.2.2",
     "react": "18.1.0",
     "react-native": "0.70.6"
   },
@@ -27,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
+    "depcheck": "^1.4.3",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
